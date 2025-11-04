@@ -1,0 +1,1 @@
+Intel(R) Core(TM) i7-10700 CPU (2.90 GHz) and an NVIDIA GeForce 3060Ti GPU, utilizing PyTorch 3.8. 
