@@ -7,8 +7,7 @@ The paper can be accessed through：*
 
 # Datasets:
 Two benchmark PolSAR datasets were utilized to assess the performance of the proposed method in this study. Oberpfaffenhofen and Barnaul.
-The dataset of Oberpfaffenhofen is  provided in this repository.
-
+The dataset of Oberpfaffenhofen is  provided in this repository. And Barnaul dataset can be downloaded here: https://pan.baidu.com/s/1EUUpU9FGPOFtCs1P0iGO4g code: d8f5
 # Experimental Configuration
 Intel(R) Core(TM) i7-10700 CPU (2.90 GHz) and an NVIDIA GeForce 3060Ti GPU, utilizing PyTorch 3.8. 
 
