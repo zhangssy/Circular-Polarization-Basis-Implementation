@@ -5,7 +5,7 @@ Source code for "PolSAR Image Classification Using Complex-Valued Multiscale Att
 The paper can be accessed through:
 https://www.sciencedirect.com/science/article/pii/S1569843225000597
 
-![image](https://github.com/user-attachments/assets/4566cc35-294c-4e9f-a0b3-8bc645a538a0)
+![image](https://github.com/zhangssy/Circular-Polarization-Basis-Implementation/blob/main/111/results/classification%20results.png)
 
 ![image](https://github.com/user-attachments/assets/44c30c1c-62b7-4cd4-ad39-b2eb1bc096c0)
 
