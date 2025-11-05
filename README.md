@@ -3,7 +3,7 @@ Source code for "Integrating Linear and Circular Polarization Features for PolSA
 
 The paper can be accessed through：*
 
-![image](总体流程图)
+![image](https://github.com/zhangssy/Circular-Polarization-Basis-Implementation/blob/main/Source_code_and_datasets/results/flowchart.png?raw=true)
 
 # Datasets:
 Two benchmark PolSAR datasets were utilized to assess the performance of the proposed method in this study. Oberpfaffenhofen and Barnaul.
