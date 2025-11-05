@@ -1,37 +1,32 @@
+# Circular-Polarization-Basis-Implementation
+Source code for "Integrating Linear and Circular Polarization Features for PolSAR Land Cover Classification with Deep Learning" in **International Journal of Applied Earth Observation and Geoinformation**
 
-# CV-MsAtViT
-Source code for "PolSAR Image Classification Using Complex-Valued Multiscale Attention Vision Transformer (CV-MsAtViT)" Accepted for publication in **International Journal of Applied Earth Observation and Geoinformation**
+The paper can be accessed through：*
 
-The paper can be accessed through:
-https://www.sciencedirect.com/science/article/pii/S1569843225000597
-
-![image](https://github.com/zhangssy/Circular-Polarization-Basis-Implementation/blob/main/111/results/classification%20results.png)
-
-![image](https://github.com/user-attachments/assets/44c30c1c-62b7-4cd4-ad39-b2eb1bc096c0)
+![image](总体流程图)
 
 # Datasets:
-Three PolSAR datasets were utilized to assess the performance of the CV-MsAtViT method in this study. Flevoland, San Francisco, and Oberpfaffenhofen.
-link to the datasets along their class maps is available at:
-https://mega.nz/folder/WhgT1L4S#PnMttCUpjtwkD8qTEdwZsw
+Two benchmark PolSAR datasets were utilized to assess the performance of the proposed method in this study. Oberpfaffenhofen and Barnaul.
+The dataset of Oberpfaffenhofen is  provided in this repository.
 
-# Requirement
-Python 3.9.18, Tensorflow (and Keras) 2.10.0, cvnn 2.0, Tensorflow Probability 0.18.0
+# Experimental Configuration
+Intel(R) Core(TM) i7-10700 CPU (2.90 GHz) and an NVIDIA GeForce 3060Ti GPU, utilizing PyTorch 3.8. 
 
 # Results
-To quantitatively measure the proposed CV-MsAtViT model, three evaluation metrics are employed to verify the effectiveness of the algorithm, Overall Accuracy (OA), Average Accuracy (AA) and Cohen's Kappa (k). Also, Each class accuracy has been reported.
-![image](https://github.com/user-attachments/assets/d6a66081-9277-4d52-b1d9-edef812f9b59)
-![image](https://github.com/user-attachments/assets/831df4be-b532-4fd7-9a26-0c3edc6e963a)
-![image](https://github.com/user-attachments/assets/78321e6e-4f29-4121-914a-c0503bdf281f)
+To quantitatively measure the proposed method, three evaluation metrics are employed to verify the effectiveness of the algorithm, Overall Accuracy (OA), Average Accuracy (AA) and Cohen's Kappa (k). Also, Each class accuracy has been reported.
+![image](分类结果)
+![image](表1)
+![image](表2)
 
 # Citation
-@article{alkhatib2025polsar,
-  title={PolSAR image classification using complex-valued multiscale attention vision transformer (CV-MsAtViT)},
-  author={Alkhatib, Mohammed Q},
+@article{
+  title={Integrating Linear and Circular Polarization Features for PolSAR Land Cover Classification with Deep Learning},
+  author={Shuaiying Zhang, Zhen Dong, Huadong Lin, Zhendong Zhang, Jinran Wu, Sinong Quan, Wentao An, Tong Lif, Rajiv Pandeyg},
   journal={International Journal of Applied Earth Observation and Geoinformation},
-  volume={137},
-  pages={104412},
-  year={2025},
+  volume={},
+  pages={},
+  year={},
   publisher={Elsevier}
 }
 
-Feel free to contact me on: mqalkhatib@ieee.org
+Feel free to contact me : zhangshuaiying@nudt.edu.cn
