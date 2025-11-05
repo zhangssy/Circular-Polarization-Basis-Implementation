@@ -5,7 +5,7 @@ The paper can be accessed through：*
 
 ![image](https://github.com/zhangssy/Circular-Polarization-Basis-Implementation/blob/main/Source_code_and_datasets/results/flowchart.png?raw=true)
 
-# Datasets:
+# Datasets
 Two benchmark PolSAR datasets were utilized to assess the performance of the proposed method in this study. Oberpfaffenhofen and Barnaul.
 The dataset of Oberpfaffenhofen is  provided in this repository. 
 And Barnaul dataset can be downloaded here: 
