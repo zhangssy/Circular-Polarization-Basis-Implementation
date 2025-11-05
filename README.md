@@ -13,9 +13,9 @@ Intel(R) Core(TM) i7-10700 CPU (2.90 GHz) and an NVIDIA GeForce 3060Ti GPU, util
 
 # Results
 To quantitatively measure the proposed method, three evaluation metrics are employed to verify the effectiveness of the algorithm, Overall Accuracy (OA), Average Accuracy (AA) and Cohen's Kappa (k). Also, Each class accuracy has been reported.
-![image](分类结果)
-![image](表1)
-![image](表2)
+![image](https://github.com/zhangssy/Circular-Polarization-Basis-Implementation/blob/main/Source_code_and_datasets/results/classification%20results.png?raw=true)
+![image](https://github.com/zhangssy/Circular-Polarization-Basis-Implementation/blob/main/Source_code_and_datasets/results/result1.png?raw=true)
+![image](https://github.com/zhangssy/Circular-Polarization-Basis-Implementation/blob/main/Source_code_and_datasets/results/result2.png?raw=true)
 
 # Citation
 @article{
