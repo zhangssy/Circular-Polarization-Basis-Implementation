@@ -1,5 +1,5 @@
 # Circular-Polarization-Basis-Implementation
-Source code for "Integrating Linear and Circular Polarization Features for PolSAR Land Cover Classification with Deep Learning" in **International Journal of Applied Earth Observation and Geoinformation**
+Source code and datasets for "Integrating Linear and Circular Polarization Features for PolSAR Land Cover Classification with Deep Learning" in **International Journal of Applied Earth Observation and Geoinformation**
 
 The paper can be accessed through：*
 
