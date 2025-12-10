@@ -80,7 +80,7 @@ class UNet(nn.Module):
         # Encoder
         x1 = self.inc(x)  # (32, 64, 11, 11)
         x2 = self.down1(x1)  # (32, 128, 5, 5)
-        x3 = self.down2(x2)  # (32, 256, 3, 3)
+        x3 = self.down2(x2)  # (32, 256, 2, 2)
         x4 = self.down3(x3)  # (32, 512, 1, 1) → 实际会向下取整为1x1
 
         # 处理尺寸过小的情况
@@ -89,7 +89,7 @@ class UNet(nn.Module):
 
         # Decoder
         x = self.up1(x4, x3)  # (32, 256, 1, 1)
-        x = self.up2(x, x2)  # (32, 128, 3, 3)
+        x = self.up2(x, x2)  # (32, 128, 2, 2)
         x = self.up3(x, x1)  # (32, 64, 7, 7)
 
         # 输出
