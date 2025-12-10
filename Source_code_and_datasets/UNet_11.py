@@ -74,7 +74,7 @@ class UNet(nn.Module):
         # 输出层 (调整输出尺寸为输入尺寸)
         # self.outc = nn.Conv2d(64, n_classes, kernel_size=1)
         self.global_pool = nn.AdaptiveAvgPool2d(1)  # 全局平均池化
-        self.fc = nn.Linear(64, n_classes)  # 全连接层输出7类
+        self.fc = nn.Linear(64, n_classes)  # 全连接层输出5类
 
     def forward(self, x):
         # Encoder
