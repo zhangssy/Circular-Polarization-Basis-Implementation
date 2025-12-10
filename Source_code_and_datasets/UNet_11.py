@@ -97,7 +97,7 @@ class UNet(nn.Module):
         # return logits
         x = self.global_pool(x)  # [32, 64, 1, 1]
         x = x.view(x.size(0), -1)  # [32, 64]
-        return self.fc(x)  # [32, 7]
+        return self.fc(x)  # [32, 5]
 
 
 # 测试网络
