@@ -88,12 +88,12 @@ class UNet(nn.Module):
             x4 = F.interpolate(x4, size=(1, 1), mode='bilinear', align_corners=True)
 
         # Decoder
-        x = self.up1(x4, x3)  # (32, 256, 1, 1)
-        x = self.up2(x, x2)  # (32, 128, 2, 2)
-        x = self.up3(x, x1)  # (32, 64, 7, 7)
+        x = self.up1(x4, x3)  # (32, 256, 2, 2)
+        x = self.up2(x, x2)  # (32, 128, 5, 5)
+        x = self.up3(x, x1)  # (32, 64, 11, 11)
 
         # 输出
-        # logits = self.outc(x)  # (32, n_classes, 11, 11)
+        # logits = self.outc(x)  # (32, n_classes, 1, 1)
         # return logits
         x = self.global_pool(x)  # [32, 64, 1, 1]
         x = x.view(x.size(0), -1)  # [32, 64]
@@ -102,17 +102,9 @@ class UNet(nn.Module):
 
 # 测试网络
 if __name__ == "__main__":
-    # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # 创建输入数据 (batch_size=32, channels=33, height=11, width=11)
-    # x = torch.randn(32, 33, 11, 11).to(device)
 
     # 初始化模型
     model = UNet(n_channels=6, n_classes=5)
 
-    # # 前向传播
-    # with torch.no_grad():
-    #     output = model(x)
-    #
-    # print(f"输入尺寸: {x.shape}")
-    # print(f"输出尺寸: {output.shape}")  # 应为 (32, 1, 11,11)
+
