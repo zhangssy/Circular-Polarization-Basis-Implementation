@@ -38,7 +38,7 @@ class MyDataset(Dataset):
         return len(self.imgs)
 
 
-# 构建数据集和数据加载器
+#Building datasets and data loaders
 train_data = MyDataset(txt_path=train_txt_path)
 test_data = MyDataset(txt_path=test_txt_path)
 train_loader = DataLoader(dataset=train_data, batch_size=batch_size, shuffle=True, num_workers=0)
@@ -85,7 +85,7 @@ def train(model, device, train_loader, optimizer, epoch):
         optimizer.step()
         total_loss += loss.item()
 
-        # 计算训练精度
+        #Calculate training accuracy
         outputs = np.argmax(outputs.detach().cpu().numpy(), axis=1)
         if count == 0:
             y_pred_test = outputs
