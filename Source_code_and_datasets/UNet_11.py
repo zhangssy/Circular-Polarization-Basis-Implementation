@@ -43,15 +43,15 @@ class Up(nn.Module):
         self.up = nn.ConvTranspose2d(in_channels, in_channels // 2, kernel_size=2, stride=2)
         self.conv = DoubleConv(in_channels, out_channels)
 
-    def forward(self, x1, x2):
-        x1 = self.up(x1)
-        # 处理尺寸不匹配的情况
+    def forward(self, x1, x2): # For up1, the input x1 and x2 sizes should be [512,1,1] and [256,2,2]
+        x1 = self.up(x1) # [32，256, 2, 2]
+        # #Dealing with size mismatches
         diffY = x2.size()[2] - x1.size()[2]
         diffX = x2.size()[3] - x1.size()[3]
         x1 = F.pad(x1, [diffX // 2, diffX - diffX // 2,
-                        diffY // 2, diffY - diffY // 2])
-        x = torch.cat([x2, x1], dim=1)
-        return self.conv(x)
+                        diffY // 2, diffY - diffY // 2]) # [32，256, 2, 2] 
+        x = torch.cat([x2, x1], dim=1) # [32，512, 2, 2]
+        return self.conv(x)  # [32，256, 2, 2]
 
 
 class UNet(nn.Module):
@@ -71,19 +71,19 @@ class UNet(nn.Module):
         self.up2 = Up(256, 128)
         self.up3 = Up(128, 64)
 
-        # 输出层 (调整输出尺寸为输入尺寸)
+        #Output layer 
         # self.outc = nn.Conv2d(64, n_classes, kernel_size=1)
-        self.global_pool = nn.AdaptiveAvgPool2d(1)  # 全局平均池化
-        self.fc = nn.Linear(64, n_classes)  # 全连接层输出5类
+        self.global_pool = nn.AdaptiveAvgPool2d(1)  # Global average pooling
+        self.fc = nn.Linear(64, n_classes)  # Fully connected layer
 
     def forward(self, x):
         # Encoder
         x1 = self.inc(x)  # (32, 64, 11, 11)
         x2 = self.down1(x1)  # (32, 128, 5, 5)
         x3 = self.down2(x2)  # (32, 256, 2, 2)
-        x4 = self.down3(x3)  # (32, 512, 1, 1) → 实际会向下取整为1x1
+        x4 = self.down3(x3)  # (32, 512, 1, 1)
 
-        # 处理尺寸过小的情况
+        # Dealing with situations where the size is too small
         if x4.size()[2] == 0:
             x4 = F.interpolate(x4, size=(1, 1), mode='bilinear', align_corners=True)
 
@@ -92,7 +92,7 @@ class UNet(nn.Module):
         x = self.up2(x, x2)  # (32, 128, 5, 5)
         x = self.up3(x, x1)  # (32, 64, 11, 11)
 
-        # 输出
+        # output
         # logits = self.outc(x)  # (32, n_classes, 1, 1)
         # return logits
         x = self.global_pool(x)  # [32, 64, 1, 1]
@@ -100,11 +100,11 @@ class UNet(nn.Module):
         return self.fc(x)  # [32, 5]
 
 
-# 测试网络
+# test network
 if __name__ == "__main__":
 
 
-    # 初始化模型
-    model = UNet(n_channels=6, n_classes=5)
+    # Initialize the model
+    model = UNet(n_channels=12, n_classes=5)
 
 
