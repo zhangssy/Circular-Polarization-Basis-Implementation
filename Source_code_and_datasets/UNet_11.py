@@ -104,7 +104,7 @@ class UNet(nn.Module):
 if __name__ == "__main__":
 
 
-    # Initialize the model
-    model = UNet(n_channels=12, n_classes=5)
+    # Initialize the model, n_channels can be 3,6,9,18
+    model = UNet(n_channels=18, n_classes=5)
 
 
