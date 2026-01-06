@@ -23,7 +23,7 @@ To quantitatively measure the proposed method, three evaluation metrics are empl
   journal={International Journal of Applied Earth Observation and Geoinformation},
   volume={},
   pages={},
-  year={},
+  year={2026},
   publisher={Elsevier}
 }
 
